@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import HomePage from "./components/HomePage";
 import { NotesContext } from "./store/NoteContext";
+import "./index.css";
+import Tailwind from "./components/Tailwind";
 
 function App() {
   const [selectedNote, setSelectedNote] = useState<string>("");
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div data-testid="parentL" className="App">
-      <NotesContext.Provider
+      {/* <NotesContext.Provider
         value={{
           selectedNote: selectedNote,
           setSelectedNote: handleSelectedNoteChange,
@@ -20,8 +21,8 @@ function App() {
         }}
       >
         <HomePage />
-      </NotesContext.Provider>
-      {/* <HomePage /> */}
+      </NotesContext.Provider> */}
+      <Tailwind />
     </div>
   );
 }
