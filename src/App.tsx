@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div data-testid="parentL" className="App">
-      {/* <NotesContext.Provider
+      <NotesContext.Provider
         value={{
           selectedNote: selectedNote,
           setSelectedNote: handleSelectedNoteChange,
@@ -21,8 +21,7 @@ function App() {
         }}
       >
         <HomePage />
-      </NotesContext.Provider> */}
-      <Tailwind />
+      </NotesContext.Provider>
     </div>
   );
 }
