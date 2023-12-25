@@ -4,6 +4,7 @@ import HomePage from "./components/HomePage";
 import { NotesContext } from "./store/NoteContext";
 import "./index.css";
 import Tailwind from "./components/Tailwind";
+import SampleNote from "./components/SampleNote";
 
 function App() {
   const [selectedNote, setSelectedNote] = useState<string>("");

@@ -28,3 +28,12 @@ export interface NoteStorage {
 export interface NoteObjectArray<K, V> {
   [key: string]: V;
 }
+
+export interface SingleTodoProps {
+  id: string;
+  todo: string;
+  isCompleted: boolean;
+  deleteClicked: (id: string) => void;
+  editClicked: (id: string) => void;
+  saveClicked: (id: string, todo:string) => void;
+}
