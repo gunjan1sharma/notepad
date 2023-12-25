@@ -8,7 +8,7 @@ import TextWatcher from "./TextWatcher";
 import { NoteObjectArray } from "../extras/types";
 import { NotesContext } from "../store/NoteContext";
 
-const noteId: any = nanoid();
+let noteId: number = 1001;
 const modules = {
   toolbar: [
     [{ header: [1, 2, false] }],
@@ -77,7 +77,7 @@ function HomePage() {
       { createdAt: new Date().toDateString() },
     ];
 
-    localStorage.setItem(noteId, JSON.stringify(Note));
+    localStorage.setItem(String(noteId++), JSON.stringify(Note));
   }
   
   //Triggering useEffect to re-render UI everytime selectedNote changes

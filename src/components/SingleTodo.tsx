@@ -2,7 +2,11 @@ import { Button, Checkbox, TextField, Typography } from "@mui/material";
 import { SingleTodoProps } from "../extras/types";
 import { useState } from "react";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
+import Tailwind from "../components/Tailwind";
+import SampleNote from "../components/SampleNote";
+import { NotesContext } from "../store/NoteContext";
+import "../index.css";
+
 
 function SingleTodo(props: SingleTodoProps) {
   const [todo, setTodo] = useState(props.todo);
@@ -25,7 +29,7 @@ function SingleTodo(props: SingleTodoProps) {
 
   return (
     <div className="m-3 p-5 border shadow-lg border-blue-700 flex items-center justify-between">
-      <Checkbox value={done} onChange={(e, c) => setDone(c)} />
+      <Checkbox data-testid='checkbox' value={done} onChange={(e, c) => setDone(c)} />
       {editclicked === true ? (
         <Typography sx={{ marginRight: "7px", fontFamily: "monospace" }}>
           {props.todo}

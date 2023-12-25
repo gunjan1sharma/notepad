@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./App.css";
 import HomePage from "./components/HomePage";
 import { NotesContext } from "./store/NoteContext";
 import "./index.css";
