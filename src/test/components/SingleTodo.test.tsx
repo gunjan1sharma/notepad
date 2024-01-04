@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, prettyDOM } from "@testing-library/react";
 import SingleTodo from "../../components/SingleTodo";
 
 const emptyFun = (id: string) => {};
@@ -36,7 +36,7 @@ test("[SingleTodo] All Static Levels Should Be Visible", () => {
   render(
     <SingleTodo
       id="1"
-      isCompleted={false}
+      isCompleted={true}
       deleteClicked={emptyFun}
       editClicked={emptyFun}
       saveClicked={emptyFun}
@@ -44,6 +44,13 @@ test("[SingleTodo] All Static Levels Should Be Visible", () => {
       key="kk"
     />
   );
+
+  const todo = screen.getByTestId('todo-text');
+
+  expect(todo).toBeInTheDocument();
+  expect(todo).not.toHaveTextContent('');
+
+  console.log(prettyDOM());
 });
 
 test("[SingleTodo] All Event Should Work As Expected", () => {

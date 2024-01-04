@@ -31,7 +31,7 @@ function SingleTodo(props: SingleTodoProps) {
     <div className="m-3 p-5 border shadow-lg border-blue-700 flex items-center justify-between">
       <Checkbox data-testid='checkbox' value={done} onChange={(e, c) => setDone(c)} />
       {editclicked === true ? (
-        <Typography sx={{ marginRight: "7px", fontFamily: "monospace" }}>
+        <Typography data-testid='todo-text' sx={{ marginRight: "7px", fontFamily: "monospace" }}>
           {props.todo}
         </Typography>
       ) : (
